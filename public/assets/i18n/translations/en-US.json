@@ -1,0 +1,19 @@
+{
+    "detail": "Details",
+    "stats": "Stats",
+    "types": "Types",
+    "emptyItem": "Content not found",
+    "fav": "Favorite Pokemons",
+    "caught":"Caught Pokemons",
+    "emptyList":"Your list is empty",
+    "total":"Total",
+    "recordsFound":"Records found.",
+    "hp":"HP",
+    "attack":"Attack",
+    "defense":"Defense",
+    "special-attack":"Special Attack",
+    "special-defense":"Special Defense",
+    "speed":"Speed"
+
+
+}

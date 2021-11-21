@@ -1,6 +1,20 @@
-import { CLEAR_LIST, CLEAR_POKEMON, GET_POKEMON_FULFILLED, GET_POKEMON_LIST_FULFILLED, GET_POKEMON_LIST_PENDING, GET_POKEMON_LIST_REJECTED, } from "../actions/ListActionTypes"
+import { 
+    CLEAR_LIST, 
+    CLEAR_POKEMON, 
+    CLEAR_POKEMON_DETAIL, 
+    CLEAR_POKEMON_SPECIES, 
+    GET_POKEMON_FULFILLED, 
+    GET_POKEMON_LIST_FULFILLED, 
+    GET_POKEMON_LIST_PENDING, 
+    GET_POKEMON_LIST_REJECTED, 
+    GET_POKEMON_SPECIES_FULFILLED, 
+    GET_POKEMON_SPECIES_PENDING, 
+    GET_POKEMON_SPECIES_REJECTED, 
+    GET_POKE_DETAIL_FULFILLED, 
+    GET_POKE_DETAIL_PENDING, 
+    GET_POKE_DETAIL_REJECTED, } from "../actions/ListActionTypes"
 
-const initalState={
+const initialState={
     list:{
         data:[],
         isLoading:false,
@@ -8,11 +22,22 @@ const initalState={
     },
     pokemons:{
         data:[],
+    },
+    pokemonSpecies:{
+        isLoading:false,
+        erorr:{},
+        data:{}
+    },
+    pokeDetail:{
+        isLoading:false,
+        error:{},
+        data:{},
     }
+
 
 }
 
-const ListReducer  =(state=initalState,action)=>{
+const ListReducer  =(state=initialState,action)=>{
     switch(action.type){
         case GET_POKEMON_LIST_PENDING:
             return{
@@ -38,31 +63,99 @@ const ListReducer  =(state=initalState,action)=>{
                 }
             }
         case CLEAR_LIST:
+            console.log('list silme tetiklendi')
             return{
                 ...state,
-                list:initalState,
+                list:{
+                    data:[],
+                    isLoading:false,
+                    error:{}
+                }
             }
        
         case GET_POKEMON_FULFILLED:
-            let tradesData = [];
-            tradesData=[action.payload,...state.pokemons.data]
-            return {
-            ...state,
-            pokemons:{
-                
-                data:tradesData
-            }
-        }
+            const check=state.pokemons.data.find(res=>res.id===action.payload.id)
+                if(!check){
+                    return {
+                        ...state,
+                        pokemons:{
+                            data:[...state.pokemons.data,action.payload]
+                                 }
+                            }
+                    }
+            return state
 
         case CLEAR_POKEMON:
-            console.log('tetiklendi')
             return{
                 ...state,
-                pokemons:{
-                    data:[]
-                }
+                pokemons:{data:[]}
             }
 
+        case GET_POKEMON_SPECIES_PENDING:
+            return{
+                ...state,
+                pokemonSpecies:{
+                    isLoading:true
+                }
+            }
+        case GET_POKEMON_SPECIES_REJECTED:
+            return{
+                ...state,
+                pokemonSpecies:{
+                    isLoading:false,
+                    error:action.payload
+                }
+            }
+        case GET_POKEMON_SPECIES_FULFILLED:
+            return{
+                ...state,
+                pokemonSpecies:{
+                    isLoading:false,
+                    data:action.payload
+                }
+            }
+        case CLEAR_POKEMON_SPECIES:
+            return{
+                ...state,
+                pokemonSpecies:{
+                    data:{},
+                    isLoading:false,
+                    error:{}}
+            }
+
+        case GET_POKE_DETAIL_PENDING:
+            return{
+                ...state,
+                pokeDetail:{
+                    isLoading:true,
+                }
+
+            }
+        case GET_POKE_DETAIL_REJECTED:
+            return{
+                ...state,
+                pokeDetail:{
+                    isLoading:false,
+                    error:action.payload
+                }
+            }
+        case GET_POKE_DETAIL_FULFILLED:
+            return{
+                ...state,
+                pokeDetail:{
+                    isLoading:false,
+                    data:action.payload
+                }
+            }
+        case CLEAR_POKEMON_DETAIL:
+            return{
+                ...state,
+                pokeDetail:{
+                    data:{},
+                    isLoading:false,
+                    error:{}
+                }
+            }
         default:
             return state
     }

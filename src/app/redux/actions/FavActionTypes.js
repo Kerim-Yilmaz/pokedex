@@ -1,0 +1,10 @@
+
+const FAV_POKEMON ='FAV_POKEMON'
+
+const CAUGHT_POKEMON ='CAUGHT_POKEMON'
+
+export {
+    FAV_POKEMON,
+    CAUGHT_POKEMON,
+}
+

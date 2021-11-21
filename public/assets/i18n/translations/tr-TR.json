@@ -1,0 +1,18 @@
+{
+    "detail": "Detay",
+    "stats": "İstatistikler",
+    "types": "Türleri",
+    "emptyItem": "İçerik Bulunamadı",
+    "fav":"Favori Pokemonlar",
+    "caught":"Yakalanmış Pokemonlar",
+    "emptyList":"Listeniz Boş",
+    "total":"Toplam",
+    "recordsFound":"Kayıt Bulundu.",
+    "hp":"Can",
+    "attack":"Saldırı",
+    "defense":"Savunma",
+    "special-attack":"Özel Saldırı",
+    "special-defense":"Özel Savunma",
+    "speed":"Hız"
+
+}
