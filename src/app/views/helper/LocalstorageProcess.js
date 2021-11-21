@@ -1,4 +1,3 @@
-import { toast } from "react-toastify"
 
 
 
@@ -7,8 +6,16 @@ import { toast } from "react-toastify"
 export  function catchPoke(data){
     const getcatchPoke = localStorage.getItem('myPoke')
     const parseData = JSON.parse(getcatchPoke)
-    let totalData = [...parseData,data]
-    return localStorage.setItem('myPoke',JSON.stringify(totalData))
+    if(!parseData){
+        return localStorage.setItem('myPoke',JSON.stringify([data]))
+    }else{
+        let setData = [...parseData,data]
+        return localStorage.setItem('myPoke',JSON.stringify(setData))
+
+
+    }
+
+    
     
 }
 

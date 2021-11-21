@@ -37,7 +37,7 @@ export default function Home(){
 
     return(
      <>
-     <Container fluid>
+     <Container fluid >
          <Row> 
            {pokemons.data?.sort((a,b)=>a.id-b.id).map(res =>
            

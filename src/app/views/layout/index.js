@@ -7,9 +7,11 @@ export default function Layout(){
 
     return(
         <>
+        <Container>
         <Header/>
-        <Container fluid>
+        <Container fluid className='flex-row'>
         <Content/>
+        </Container>
         </Container>
         </>
     )

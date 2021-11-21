@@ -1,5 +1,5 @@
 
-import {BrowserRouter, Router, Switch} from 'react-router-dom'
+import {BrowserRouter, Router} from 'react-router-dom'
 import history from "./history";
 import Layout from "./app/views/layout";
 import { Provider } from "react-redux";
@@ -19,9 +19,7 @@ function App() {
                 <ToastContainer />
                     <BrowserRouter basename={'http://localhost:3000'}>
                         <Router history={history}>
-                            <Switch>
                                <Layout/>
-                            </Switch>
                         </Router>
                     </BrowserRouter>
                 </Provider>

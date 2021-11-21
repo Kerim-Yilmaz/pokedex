@@ -1,4 +1,5 @@
 import React,{ Suspense } from "react";
+import { Container } from "react-bootstrap";
 import { Switch,Route,Redirect } from "react-router-dom";
 import routes from "../../../routes";
 import Loading from "../Components/Loading/Loading";
@@ -9,6 +10,7 @@ import Loading from "../Components/Loading/Loading";
 
 
     return (
+        <Container>
             <Suspense fallback={Loading}>
                 <Switch>
                     
@@ -27,6 +29,7 @@ import Loading from "../Components/Loading/Loading";
                         <Redirect to="/" />
                 </Switch>
             </Suspense>
+        </Container>
     )
 }
 
