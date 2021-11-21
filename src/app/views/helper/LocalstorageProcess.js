@@ -15,7 +15,7 @@ export  function catchPoke(data){
 export  function getCaughtPokes(){
     const getcatchPoke = localStorage.getItem('myPoke')
     const parseData = JSON.parse(getcatchPoke)
-    return parseData
+    return parseData ? parseData:[]
 }
 
 
