@@ -3,16 +3,21 @@ import { Modal } from 'react-bootstrap'
 import { toast } from 'react-toastify';
 import { catchPoke } from '../../helper/LocalstorageProcess';
 import './poke.css'
+import { useTranslation } from 'react-i18next';
+
 export default function CaughtModal({data,show,handleClose}) {
+
+  const { t } = useTranslation();
+
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       const succ = randomBoolean()
       if(succ){
         catchPoke(data)
-     toast.success('İşlem Başarılı')
+     toast.success(t('succes'))
     }else{
-      toast.error('Maalesef')
+      toast.error(t('rejected'))
     }
      handleClose()
     }, 3500);

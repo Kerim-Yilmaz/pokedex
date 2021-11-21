@@ -13,7 +13,12 @@
     "defense":"Defense",
     "special-attack":"Special Attack",
     "special-defense":"Special Defense",
-    "speed":"Speed"
+    "speed":"Speed",
+    "succes":"You successfully caught the Pokemon",
+    "rejected":"You couldn't catch it. Try again",
+    "free":"You released",
+    "cpoke":"Caugth Pokemon",
+    "fpoke":"Let it go"
 
 
 }

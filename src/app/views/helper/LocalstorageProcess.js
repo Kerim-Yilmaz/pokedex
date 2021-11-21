@@ -3,6 +3,7 @@ import { toast } from "react-toastify"
 
 
 
+
 export  function catchPoke(data){
     const getcatchPoke = localStorage.getItem('myPoke')
     const parseData = JSON.parse(getcatchPoke)
@@ -22,5 +23,4 @@ export function freePoke(id){
     const data = getCaughtPokes()
     const updateData = data.filter(res=>res.id !== id )
     localStorage.setItem('myPoke',JSON.stringify(updateData))
-    return toast.success('Serbest bırakıldı')
 }

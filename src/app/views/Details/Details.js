@@ -18,6 +18,7 @@ import CaughtModal from "../Components/Modal/CaughtModal";
 import { freePoke, getCaughtPokes } from "../helper/LocalstorageProcess";
 import Heart from "react-animated-heart";
 import { useTranslation } from 'react-i18next';
+import { toast } from "react-toastify";
 
 
 export default function Details() {
@@ -90,8 +91,8 @@ export default function Details() {
                         </Card.Body>
                         <Card.Footer style={{textAlign: 'center'}}>
                         {checkCaugthPoke()? 
-                        <Button onClick={()=>{freePoke(pokeDetail.data.id)}}>Serbest</Button>:
-                        <Button onClick={()=>setShow(true)} variant="success">Caugth pokemon</Button>}
+                        <Button onClick={()=>{freePoke(pokeDetail.data.id);toast.success(t('free'))}} variant="warning">{t('fpoke')}</Button>:
+                        <Button onClick={()=>setShow(true)} variant="danger">{t('cpoke')}</Button>}
                            
                         </Card.Footer>
                     </Card>

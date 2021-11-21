@@ -13,6 +13,12 @@
     "defense":"Savunma",
     "special-attack":"Özel Saldırı",
     "special-defense":"Özel Savunma",
-    "speed":"Hız"
+    "speed":"Hız",
+    "succes":"Pokemonu Başarıyla Yakaladınız.",
+    "rejected":"Yakalayamadınız. Tekrar Deneyin.",
+    "free":"Serbest Bıraktınız.",
+    "cpoke":"Pokemonu Yakala",
+    "fpoke":"Serbest Bırak"
+
 
 }
