@@ -37,11 +37,11 @@ export default function Header() {
                         </Navbar.Brand>
                         <Navbar.Brand onClick={()=>setCaught(true)} >
                         <Image  width={50} height={50} src={poke}/>
-                        <Badge bg="danger">{caughtPoke.length}</Badge>
+                        <Badge bg="danger">{caughtPoke?.length}</Badge>
                         </Navbar.Brand>
                         <Navbar.Brand onClick={()=>setFav(true)}>
                         <Image  width={50} height={50} src={favorite}/>
-                        <Badge bg="danger">{favpoke.favPokemons.data.length}</Badge>
+                        <Badge bg="danger">{favpoke?.favPokemons?.data?.length}</Badge>
                         </Navbar.Brand>
                         
                     </Navbar.Collapse>
